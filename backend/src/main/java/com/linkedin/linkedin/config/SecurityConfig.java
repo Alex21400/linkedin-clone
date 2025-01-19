@@ -41,8 +41,8 @@ public class SecurityConfig {
                     .authorizeHttpRequests(authorize -> {
                         authorize.requestMatchers(
                                 "/api/v1/authentication/sign-up",
-                                         "api/v1/authentication/sign-in",
-                                         "api/v1/authentication/send-password-reset-token",
+                                         "/api/v1/authentication/sign-in",
+                                         "/api/v1/authentication/send-password-reset-token",
                                          "/api/v1/authentication/reset-password")
                                 .permitAll()
                                 .requestMatchers("/api/v1/admin-only/**").hasAuthority("ADMIN")

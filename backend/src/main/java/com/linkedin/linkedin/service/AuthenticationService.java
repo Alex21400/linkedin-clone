@@ -1,9 +1,9 @@
 package com.linkedin.linkedin.service;
 
-import com.linkedin.linkedin.dto.AuthDTO;
-import com.linkedin.linkedin.dto.SignInRequest;
-import com.linkedin.linkedin.dto.SignUpRequest;
-import com.linkedin.linkedin.dto.ResetPasswordRequest;
+import com.linkedin.linkedin.dto.auth.AuthDTO;
+import com.linkedin.linkedin.dto.auth.SignInRequest;
+import com.linkedin.linkedin.dto.auth.SignUpRequest;
+import com.linkedin.linkedin.dto.auth.ResetPasswordRequest;
 import com.linkedin.linkedin.exception.EmailAlreadyTakenException;
 import com.linkedin.linkedin.exception.EmailVerificationException;
 import com.linkedin.linkedin.exception.PasswordResetException;

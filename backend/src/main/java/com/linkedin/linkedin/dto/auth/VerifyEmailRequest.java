@@ -1,4 +1,4 @@
-package com.linkedin.linkedin.dto;
+package com.linkedin.linkedin.dto.auth;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;

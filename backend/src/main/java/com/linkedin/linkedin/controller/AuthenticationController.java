@@ -1,9 +1,10 @@
 package com.linkedin.linkedin.controller;
 
-import com.linkedin.linkedin.dto.*;
+import com.linkedin.linkedin.dto.user.*;
+import com.linkedin.linkedin.dto.auth.*;
+import com.linkedin.linkedin.mapper.UserMapper;
 import com.linkedin.linkedin.model.User;
 import com.linkedin.linkedin.service.AuthenticationService;
-import com.linkedin.linkedin.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -16,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class AuthenticationController {
     private final AuthenticationService authenticationService;
-    private final UserService userService;
+    private final UserMapper userMapper;
 
     @PostMapping("/sign-up")
     public ResponseEntity<AuthDTO> signUpUser(@Valid @RequestBody SignUpRequest request) {
@@ -29,8 +30,8 @@ public class AuthenticationController {
     }
 
     @GetMapping("/current-user")
-    public ResponseEntity<User> getCurrentUser(@AuthenticationPrincipal User user) {
-        return ResponseEntity.status(HttpStatus.OK).body(user);
+    public ResponseEntity<UserDTO> getCurrentUser(@AuthenticationPrincipal User user) {
+        return ResponseEntity.status(HttpStatus.OK).body(userMapper.toDTO(user));
     }
 
     @PutMapping("/verify-email")

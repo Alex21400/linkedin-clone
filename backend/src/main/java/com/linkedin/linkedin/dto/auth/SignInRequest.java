@@ -1,4 +1,4 @@
-package com.linkedin.linkedin.dto;
+package com.linkedin.linkedin.dto.auth;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class SignUpRequest {
+public class SignInRequest {
     @Email
     @NotBlank(message = "Email is required.")
     private String email;
